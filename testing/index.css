@@ -1,0 +1,16 @@
+.main {
+    hello_world:;
+}
+
+.hello {
+    console-log: "Hello";
+}
+
+.world {
+    console-log: "World";
+}
+
+.hello_world {
+    hello:;
+    world:;
+}

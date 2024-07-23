@@ -1,0 +1,118 @@
+[
+  {
+    "type": "function",
+    "value": "main"
+  },
+  {
+    "type": "open-curly-brace",
+    "value": "{"
+  },
+  {
+    "type": "keyword",
+    "value": "hello_world"
+  },
+  {
+    "type": "colon",
+    "value": ":"
+  },
+  {
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
+    "type": "close-curly-brace",
+    "value": "}"
+  },
+  {
+    "type": "function",
+    "value": "hello"
+  },
+  {
+    "type": "open-curly-brace",
+    "value": "{"
+  },
+  {
+    "type": "keyword",
+    "value": "console-log"
+  },
+  {
+    "type": "colon",
+    "value": ":"
+  },
+  {
+    "type": "string",
+    "value": "Hello"
+  },
+  {
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
+    "type": "close-curly-brace",
+    "value": "}"
+  },
+  {
+    "type": "function",
+    "value": "world"
+  },
+  {
+    "type": "open-curly-brace",
+    "value": "{"
+  },
+  {
+    "type": "keyword",
+    "value": "console-log"
+  },
+  {
+    "type": "colon",
+    "value": ":"
+  },
+  {
+    "type": "string",
+    "value": "World"
+  },
+  {
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
+    "type": "close-curly-brace",
+    "value": "}"
+  },
+  {
+    "type": "function",
+    "value": "hello_world"
+  },
+  {
+    "type": "open-curly-brace",
+    "value": "{"
+  },
+  {
+    "type": "keyword",
+    "value": "hello"
+  },
+  {
+    "type": "colon",
+    "value": ":"
+  },
+  {
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
+    "type": "keyword",
+    "value": "world"
+  },
+  {
+    "type": "colon",
+    "value": ":"
+  },
+  {
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
+    "type": "close-curly-brace",
+    "value": "}"
+  }
+]

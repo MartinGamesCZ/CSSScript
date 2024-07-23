@@ -1,0 +1,55 @@
+[
+  {
+    "type": "function",
+    "name": "main",
+    "children": [
+      {
+        "type": "instruction",
+        "name": "hello_world",
+        "args": []
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "hello",
+    "children": [
+      {
+        "type": "instruction",
+        "name": "console-log",
+        "args": [
+          "Hello"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "world",
+    "children": [
+      {
+        "type": "instruction",
+        "name": "console-log",
+        "args": [
+          "World"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "hello_world",
+    "children": [
+      {
+        "type": "instruction",
+        "name": "hello",
+        "args": []
+      },
+      {
+        "type": "instruction",
+        "name": "world",
+        "args": []
+      }
+    ]
+  }
+]
