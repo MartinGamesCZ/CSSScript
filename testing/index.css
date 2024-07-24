@@ -1,13 +1,12 @@
 .main {
-    $text: "Hello, World!";
-    println: text;
+    request-json: "https://randomuser.me/api/";
+    println: var(--result);
 }
 
 .print[text, text2] {
-    process-stdout-write: text;
+    process-stdout-write: var(--text);
 }
 
 .println[text] {
-    process-stdout-write: text;
-    process-stdout-write: "\n";
+    console-log: var(--text);
 }

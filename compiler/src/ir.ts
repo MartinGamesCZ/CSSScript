@@ -47,7 +47,7 @@ function fn(
     .map((a) => a.name + (a.default_value ? ` = "${a.default_value}"` : ""))
     .join(", ");
 
-  return `function ${name}(${proc_args}) {
+  return `async function ${name}(${proc_args}) {
   ${args
     .map((a) => {
       return variable(
@@ -69,7 +69,7 @@ function fn(
 }
 
 function instruction(name: string, args: any[]) {
-  return `${name.replaceAll("-", ".")}(${args
+  return `await ${name.replaceAll("-", ".")}(${args
     .map((arg) => {
       if (arg.type == "string") return `"${arg.value}"`;
       if (arg.type == "variable-use") return variable_use(arg.value);

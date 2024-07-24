@@ -8,8 +8,8 @@
     "value": "{"
   },
   {
-    "type": "variable",
-    "value": "text"
+    "type": "keyword",
+    "value": "request-json"
   },
   {
     "type": "colon",
@@ -17,7 +17,7 @@
   },
   {
     "type": "string",
-    "value": "Hello, World!"
+    "value": "https://randomuser.me/api/"
   },
   {
     "type": "semicolon",
@@ -33,7 +33,19 @@
   },
   {
     "type": "keyword",
-    "value": "text"
+    "value": "var"
+  },
+  {
+    "type": "open-parenthesis",
+    "value": "("
+  },
+  {
+    "type": "variable-use",
+    "value": "result"
+  },
+  {
+    "type": "close-parenthesis",
+    "value": ")"
   },
   {
     "type": "semicolon",
@@ -81,7 +93,19 @@
   },
   {
     "type": "keyword",
+    "value": "var"
+  },
+  {
+    "type": "open-parenthesis",
+    "value": "("
+  },
+  {
+    "type": "variable-use",
     "value": "text"
+  },
+  {
+    "type": "close-parenthesis",
+    "value": ")"
   },
   {
     "type": "semicolon",
@@ -113,7 +137,7 @@
   },
   {
     "type": "keyword",
-    "value": "process-stdout-write"
+    "value": "console-log"
   },
   {
     "type": "colon",
@@ -121,23 +145,19 @@
   },
   {
     "type": "keyword",
+    "value": "var"
+  },
+  {
+    "type": "open-parenthesis",
+    "value": "("
+  },
+  {
+    "type": "variable-use",
     "value": "text"
   },
   {
-    "type": "semicolon",
-    "value": ";"
-  },
-  {
-    "type": "keyword",
-    "value": "process-stdout-write"
-  },
-  {
-    "type": "colon",
-    "value": ":"
-  },
-  {
-    "type": "string",
-    "value": "\\n"
+    "type": "close-parenthesis",
+    "value": ")"
   },
   {
     "type": "semicolon",

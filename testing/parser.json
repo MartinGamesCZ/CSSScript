@@ -5,20 +5,22 @@
     "args": [],
     "children": [
       {
-        "type": "variable",
-        "name": "text",
-        "value": {
-          "type": "string",
-          "value": "Hello, World!"
-        }
+        "type": "instruction",
+        "name": "request-json",
+        "args": [
+          {
+            "type": "string",
+            "value": "https://randomuser.me/api/"
+          }
+        ]
       },
       {
         "type": "instruction",
         "name": "println",
         "args": [
           {
-            "type": "keyword",
-            "value": "text"
+            "type": "variable-use",
+            "value": "result"
           }
         ]
       }
@@ -41,7 +43,7 @@
         "name": "process-stdout-write",
         "args": [
           {
-            "type": "keyword",
+            "type": "variable-use",
             "value": "text"
           }
         ]
@@ -59,21 +61,11 @@
     "children": [
       {
         "type": "instruction",
-        "name": "process-stdout-write",
+        "name": "console-log",
         "args": [
           {
-            "type": "keyword",
+            "type": "variable-use",
             "value": "text"
-          }
-        ]
-      },
-      {
-        "type": "instruction",
-        "name": "process-stdout-write",
-        "args": [
-          {
-            "type": "string",
-            "value": "\\n"
           }
         ]
       }
