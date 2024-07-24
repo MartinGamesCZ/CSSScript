@@ -124,6 +124,6 @@ print: var(--result);
 ```
 
 ## Built-in functions
-- `console.log`: Prints to the console | Args: `data: any`
+- `console-log`: Prints to the console | Args: `data: any`
 - `request-json`: Sends HTTP request and returns JSON response | Args: `url: string`
 - `input-read`: Reads input from the console | Args: `message: string`
