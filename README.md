@@ -9,6 +9,15 @@ If you make something cool with it, let me know and I will add you to the list o
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [Features](#features)
+- [Rules](#rules)
+- [Syntax](#syntax)
+  - [Functions](#functions)
+  - [Variables](#variables)
+  - [Executing instructions and functions](#executing-instructions-and-functions)
+  - [Getting results from functions](#getting-results-from-functions)
+- [Built-in functions](#built-in-functions)
+
 
 ## Introduction
 CSSScript is a toolkit for compiling and running CSS code as a programming language. Why? Because I can.
@@ -32,6 +41,8 @@ CSSScript is a toolkit for compiling and running CSS code as a programming langu
 - [ ] Error handling
 - [ ] Arithmetic operations
 - [ ] More...
+
+- [ ] Rewrite in CSS
 
 ## Rules
 I wanted to keep the language as similar to CSS as possible, so I've decided to keep the syntax as close to CSS as possible. Here are some rules that you need to follow:
