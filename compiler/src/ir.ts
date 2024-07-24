@@ -26,6 +26,10 @@ export default function generate_ir(parsed: any) {
         out += variable_use(parsed[i].value);
         break;
 
+      case "if":
+        out += if_statement(parsed[i].condition, generate_ir(parsed[i].body));
+        break;
+
       case "instruction":
         out += instruction(parsed[i].name, parsed[i].args);
         break;
@@ -84,4 +88,19 @@ function variable(name: string, value: any) {
 
 function variable_use(name: string) {
   return `getVariable("${name}")`;
+}
+
+function if_statement(condition: any, content: string) {
+  const cond = condition
+    .map((a) =>
+      a.type == "string"
+        ? `"${a.value}"`
+        : a.type == "variable-use"
+          ? variable_use(a.value)
+          : a.value,
+    )
+    .join("");
+  return `if (${cond}) {
+  ${content}
+}`;
 }

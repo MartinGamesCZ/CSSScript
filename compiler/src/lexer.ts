@@ -71,6 +71,40 @@ export default function lexer(script: string) {
 
         break;
 
+      case "@":
+        for (let j = i + 1; j < tokens.length; j++) {
+          if (
+            tokens[j] === " " ||
+            tokens[j] === "{" ||
+            tokens[j] === ";" ||
+            tokens[j] === ":" ||
+            tokens[j] === "\n" ||
+            tokens[j] === "\r" ||
+            tokens[j] === "\t" ||
+            tokens[j] === "}" ||
+            tokens[j] === "]" ||
+            tokens[j] === "[" ||
+            tokens[j] === "=" ||
+            tokens[j] === "," ||
+            tokens[j] === "(" ||
+            tokens[j] === ")"
+          ) {
+            i = j - 1;
+            break;
+          }
+
+          buf += tokens[j];
+        }
+
+        result.push({
+          type: "logic",
+          value: buf,
+        });
+
+        buf = "";
+
+        break;
+
       case "{":
         result.push({
           type: "open-curly-brace",

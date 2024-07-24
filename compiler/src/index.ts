@@ -34,7 +34,7 @@ const compiled = await Bun.build({
 
 const compiled_output = await compiled.outputs[0].text();
 
-writeFileSync("compiled.js", compiled_output);
+writeFileSync("compiled.min.js", compiled_output);
 
 const end = performance.now();
 console.log("Compiled in " + Math.floor(end - start) + "ms");

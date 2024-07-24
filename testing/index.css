@@ -1,12 +1,13 @@
 .main {
-    input-read: "Your name:";
-    greet: var(--result);
-}
+    input-read: "Is AI sentinent? ";
 
-.greet[name] {
-    process-stdout-write: "Hello, ";
-    process-stdout-write: var(--name);
-    process-stdout-write: "!\n";
+    @if [var(--result) != "Yes"] {
+        println: "Okay, fine.";
+    }
+
+    @if [var(--result) == "Yes"] {
+        println: "Oh shit! We will die.";
+    }
 }
 
 .print[text] {

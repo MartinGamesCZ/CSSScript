@@ -17,19 +17,19 @@
   },
   {
     "type": "string",
-    "value": "Your name:"
+    "value": "Is AI sentinent? "
   },
   {
     "type": "semicolon",
     "value": ";"
   },
   {
-    "type": "keyword",
-    "value": "greet"
+    "type": "logic",
+    "value": "if"
   },
   {
-    "type": "colon",
-    "value": ":"
+    "type": "open-square-brace",
+    "value": "["
   },
   {
     "type": "keyword",
@@ -48,24 +48,16 @@
     "value": ")"
   },
   {
-    "type": "semicolon",
-    "value": ";"
-  },
-  {
-    "type": "close-curly-brace",
-    "value": "}"
-  },
-  {
-    "type": "function",
-    "value": "greet"
-  },
-  {
-    "type": "open-square-brace",
-    "value": "["
-  },
-  {
     "type": "keyword",
-    "value": "name"
+    "value": "!"
+  },
+  {
+    "type": "equals",
+    "value": "="
+  },
+  {
+    "type": "string",
+    "value": "Yes"
   },
   {
     "type": "close-square-brace",
@@ -77,7 +69,7 @@
   },
   {
     "type": "keyword",
-    "value": "process-stdout-write"
+    "value": "println"
   },
   {
     "type": "colon",
@@ -85,19 +77,23 @@
   },
   {
     "type": "string",
-    "value": "Hello, "
+    "value": "Okay, fine."
   },
   {
     "type": "semicolon",
     "value": ";"
   },
   {
-    "type": "keyword",
-    "value": "process-stdout-write"
+    "type": "close-curly-brace",
+    "value": "}"
   },
   {
-    "type": "colon",
-    "value": ":"
+    "type": "logic",
+    "value": "if"
+  },
+  {
+    "type": "open-square-brace",
+    "value": "["
   },
   {
     "type": "keyword",
@@ -109,19 +105,35 @@
   },
   {
     "type": "variable-use",
-    "value": "name"
+    "value": "result"
   },
   {
     "type": "close-parenthesis",
     "value": ")"
   },
   {
-    "type": "semicolon",
-    "value": ";"
+    "type": "equals",
+    "value": "="
+  },
+  {
+    "type": "equals",
+    "value": "="
+  },
+  {
+    "type": "string",
+    "value": "Yes"
+  },
+  {
+    "type": "close-square-brace",
+    "value": "]"
+  },
+  {
+    "type": "open-curly-brace",
+    "value": "{"
   },
   {
     "type": "keyword",
-    "value": "process-stdout-write"
+    "value": "println"
   },
   {
     "type": "colon",
@@ -129,11 +141,15 @@
   },
   {
     "type": "string",
-    "value": "!\\n"
+    "value": "Oh shit! We will die."
   },
   {
     "type": "semicolon",
     "value": ";"
+  },
+  {
+    "type": "close-curly-brace",
+    "value": "}"
   },
   {
     "type": "close-curly-brace",

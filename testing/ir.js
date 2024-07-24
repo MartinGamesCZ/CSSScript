@@ -1,10 +1,10 @@
 async function main() {
   
-  await input.read("Your name:");await greet(getVariable("result"));
+  await input.read("Is AI sentinent? ");if (getVariable("result")!="Yes") {
+  await println("Okay, fine.");
+}if (getVariable("result")=="Yes") {
+  await println("Oh shit! We will die.");
 }
-async function greet(name) {
-  setVariable("name", name);
-  await process.stdout.write("Hello, ");await process.stdout.write(getVariable("name"));await process.stdout.write("!\n");
 }
 async function print(text) {
   setVariable("text", text);

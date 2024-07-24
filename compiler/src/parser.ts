@@ -37,6 +37,60 @@ export default function parser(
         i += 3;
         break;
 
+      case "logic":
+        const logic_keyword = lexer_out[i].value;
+
+        if (logic_keyword == "if") {
+          const condition = [];
+          const body = [];
+          let hasCondition = false;
+          let hasBody = false;
+          let openCurly = 0;
+          let openSquare = 0;
+
+          for (let j = i + 1; j < lexer_out.length; j++) {
+            switch (lexer_out[j].type) {
+              case "open-curly-brace":
+                hasBody = true;
+                openCurly++;
+                break;
+
+              case "close-curly-brace":
+                openCurly--;
+                break;
+
+              case "open-square-brace":
+                openSquare++;
+                break;
+
+              case "close-square-brace":
+                openSquare--;
+                hasCondition = true;
+                break;
+
+              default:
+                if (openSquare > 0) condition.push(lexer_out[j]);
+                else body.push(lexer_out[j]);
+                break;
+            }
+
+            if (openCurly == 0 && openSquare == 0 && hasCondition && hasBody) {
+              i = j;
+              break;
+            }
+          }
+
+          console.log(condition);
+
+          children.push({
+            type: "if",
+            condition: parseExpression(condition),
+            body: parser(body),
+          });
+        }
+
+        break;
+
       case "keyword":
         const args = [];
         let name = "";
@@ -51,6 +105,8 @@ export default function parser(
           else if (lexer_out[j].type == "colon") continue;
           else {
             const next = lexer_out[j + 1];
+
+            console.log(next, lexer_out[j], j);
 
             if (next.type == "open-parenthesis") {
               const invocation_name = lexer_out[j].value;
@@ -103,9 +159,14 @@ function getScopeContent(index: number, lexer_out: any): [any, any, number] {
     switch (lexer_out[i].type) {
       case "open-curly-brace":
         openCurly++;
+
+        if (openCurly > 1) content.push(lexer_out[i]);
+
         break;
 
       case "close-curly-brace":
+        if (openCurly > 1) content.push(lexer_out[i]);
+
         openCurly--;
 
         if (openCurly === 0) {
@@ -115,11 +176,13 @@ function getScopeContent(index: number, lexer_out: any): [any, any, number] {
         break;
 
       case "open-square-brace":
-        openSquare++;
+        if (openCurly > 0) content.push(lexer_out[i]);
+        else openSquare++;
         break;
 
       case "close-square-brace":
-        openSquare--;
+        if (openCurly > 0) content.push(lexer_out[i]);
+        else openSquare--;
         break;
 
       default:
@@ -174,4 +237,40 @@ function parseFnArgs(fargs: any[]): any[] {
   if (temp.name) args.push(temp);
 
   return args;
+}
+
+function parseExpression(
+  exp: {
+    type: string;
+    value: string;
+  }[],
+) {
+  let out: {
+    type: string;
+    value: string;
+  }[] = [];
+
+  for (let i = 0; i < exp.length; i++) {
+    switch (exp[i].type) {
+      case "keyword":
+        if (exp[i].value == "var") {
+          out.push({
+            type: "variable-use",
+            value: exp[i + 2].value,
+          });
+
+          i += 3;
+        } else {
+          out.push(exp[i]);
+        }
+
+        break;
+
+      default:
+        out.push(exp[i]);
+        break;
+    }
+  }
+
+  return out;
 }

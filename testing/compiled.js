@@ -1,1 +1,44 @@
-var a=function(t,e){n.set(t,e)},s=function(t){return n.get(t)};async function r(){await o.read("Your name:"),await i(s("result"))}async function i(t){a("name",t),await process.stdout.write("Hello, "),await process.stdout.write(s("name")),await process.stdout.write("!\n")}var n=new Map;var o={read:async(t)=>{const e=prompt(t);a("result",e)}};r();
+const variables = new Map();
+
+function setVariable(name, value) {
+  variables.set(name, value);
+}
+
+function getVariable(name) {
+  return variables.get(name);
+}
+
+const request = {
+  json: async (url) => {
+    const res = await fetch(url).then((res) => res.json());
+
+    setVariable("result", res);
+  },
+};
+
+const input = {
+  read: async (name) => {
+    const res = prompt(name);
+
+    setVariable("result", res);
+  },
+};
+
+main();
+
+async function main() {
+  
+  await input.read("Is AI sentinent? ");if (getVariable("result")!="Yes") {
+  await println("Okay, fine.");
+}if (getVariable("result")=="Yes") {
+  await println("Oh shit! We will die.");
+}
+}
+async function print(text) {
+  setVariable("text", text);
+  await process.stdout.write(getVariable("text"));
+}
+async function println(text) {
+  setVariable("text", text);
+  await console.log(getVariable("text"));
+}
