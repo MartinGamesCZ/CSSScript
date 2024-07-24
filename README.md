@@ -123,6 +123,15 @@ request-json: "https://jsonplaceholder.typicode.com/todos/1";
 print: var(--result);
 ```
 
+### If statements
+You can use if statements to execute code conditionally.
+
+```css
+@if [condition] {
+    /* Your code here */
+}
+```
+
 ## Built-in functions
 - `console-log`: Prints to the console | Args: `data: any`
 - `request-json`: Sends HTTP request and returns JSON response | Args: `url: string`
