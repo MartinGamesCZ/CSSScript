@@ -54,6 +54,8 @@ export default function lexer(script: string) {
         break;
 
       case "\n":
+      case "\r":
+      case "\t":
         break;
 
       case '"':
