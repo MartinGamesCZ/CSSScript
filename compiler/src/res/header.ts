@@ -16,4 +16,12 @@ const request = {
   },
 };
 
+const input = {
+  read: async (name) => {
+    const res = prompt(name);
+
+    setVariable("result", res);
+  },
+};
+
 main();

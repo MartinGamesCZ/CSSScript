@@ -6,17 +6,17 @@
     "children": [
       {
         "type": "instruction",
-        "name": "request-json",
+        "name": "input-read",
         "args": [
           {
             "type": "string",
-            "value": "https://randomuser.me/api/"
+            "value": "Your name:"
           }
         ]
       },
       {
         "type": "instruction",
-        "name": "println",
+        "name": "greet",
         "args": [
           {
             "type": "variable-use",
@@ -28,13 +28,51 @@
   },
   {
     "type": "function",
+    "name": "greet",
+    "args": [
+      {
+        "name": "name"
+      }
+    ],
+    "children": [
+      {
+        "type": "instruction",
+        "name": "process-stdout-write",
+        "args": [
+          {
+            "type": "string",
+            "value": "Hello, "
+          }
+        ]
+      },
+      {
+        "type": "instruction",
+        "name": "process-stdout-write",
+        "args": [
+          {
+            "type": "variable-use",
+            "value": "name"
+          }
+        ]
+      },
+      {
+        "type": "instruction",
+        "name": "process-stdout-write",
+        "args": [
+          {
+            "type": "string",
+            "value": "!\\n"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
     "name": "print",
     "args": [
       {
         "name": "text"
-      },
-      {
-        "name": "text2"
       }
     ],
     "children": [

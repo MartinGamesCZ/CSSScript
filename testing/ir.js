@@ -1,10 +1,13 @@
 async function main() {
   
-  await request.json("https://randomuser.me/api/");await println(getVariable("result"));
+  await input.read("Your name:");await greet(getVariable("result"));
 }
-async function print(text, text2) {
+async function greet(name) {
+  setVariable("name", name);
+  await process.stdout.write("Hello, ");await process.stdout.write(getVariable("name"));await process.stdout.write("!\n");
+}
+async function print(text) {
   setVariable("text", text);
-setVariable("text2", text2);
   await process.stdout.write(getVariable("text"));
 }
 async function println(text) {

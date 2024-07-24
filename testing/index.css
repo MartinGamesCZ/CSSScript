@@ -1,9 +1,15 @@
 .main {
-    request-json: "https://randomuser.me/api/";
-    println: var(--result);
+    input-read: "Your name:";
+    greet: var(--result);
 }
 
-.print[text, text2] {
+.greet[name] {
+    process-stdout-write: "Hello, ";
+    process-stdout-write: var(--name);
+    process-stdout-write: "!\n";
+}
+
+.print[text] {
     process-stdout-write: var(--text);
 }
 

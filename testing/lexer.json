@@ -9,7 +9,7 @@
   },
   {
     "type": "keyword",
-    "value": "request-json"
+    "value": "input-read"
   },
   {
     "type": "colon",
@@ -17,7 +17,7 @@
   },
   {
     "type": "string",
-    "value": "https://randomuser.me/api/"
+    "value": "Your name:"
   },
   {
     "type": "semicolon",
@@ -25,7 +25,7 @@
   },
   {
     "type": "keyword",
-    "value": "println"
+    "value": "greet"
   },
   {
     "type": "colon",
@@ -57,6 +57,90 @@
   },
   {
     "type": "function",
+    "value": "greet"
+  },
+  {
+    "type": "open-square-brace",
+    "value": "["
+  },
+  {
+    "type": "keyword",
+    "value": "name"
+  },
+  {
+    "type": "close-square-brace",
+    "value": "]"
+  },
+  {
+    "type": "open-curly-brace",
+    "value": "{"
+  },
+  {
+    "type": "keyword",
+    "value": "process-stdout-write"
+  },
+  {
+    "type": "colon",
+    "value": ":"
+  },
+  {
+    "type": "string",
+    "value": "Hello, "
+  },
+  {
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
+    "type": "keyword",
+    "value": "process-stdout-write"
+  },
+  {
+    "type": "colon",
+    "value": ":"
+  },
+  {
+    "type": "keyword",
+    "value": "var"
+  },
+  {
+    "type": "open-parenthesis",
+    "value": "("
+  },
+  {
+    "type": "variable-use",
+    "value": "name"
+  },
+  {
+    "type": "close-parenthesis",
+    "value": ")"
+  },
+  {
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
+    "type": "keyword",
+    "value": "process-stdout-write"
+  },
+  {
+    "type": "colon",
+    "value": ":"
+  },
+  {
+    "type": "string",
+    "value": "!\\n"
+  },
+  {
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
+    "type": "close-curly-brace",
+    "value": "}"
+  },
+  {
+    "type": "function",
     "value": "print"
   },
   {
@@ -66,14 +150,6 @@
   {
     "type": "keyword",
     "value": "text"
-  },
-  {
-    "type": "comma",
-    "value": ","
-  },
-  {
-    "type": "keyword",
-    "value": "text2"
   },
   {
     "type": "close-square-brace",
