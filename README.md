@@ -36,7 +36,7 @@ CSSScript is a toolkit for compiling and running CSS code as a programming langu
 - [ ] Returning values from functions
 - [ ] More built-in functions
 - [ ] Loops
-- [ ] Conditions
+- [x] Conditions
 - [ ] Importing other files
 - [ ] Error handling
 - [ ] Arithmetic operations
