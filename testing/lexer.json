@@ -8,8 +8,8 @@
     "value": "{"
   },
   {
-    "type": "keyword",
-    "value": "print"
+    "type": "variable",
+    "value": "text"
   },
   {
     "type": "colon",
@@ -17,11 +17,23 @@
   },
   {
     "type": "string",
-    "value": "Hello"
+    "value": "Hello, World!"
   },
   {
-    "type": "string",
-    "value": "World"
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
+    "type": "keyword",
+    "value": "println"
+  },
+  {
+    "type": "colon",
+    "value": ":"
+  },
+  {
+    "type": "keyword",
+    "value": "text"
   },
   {
     "type": "semicolon",
@@ -61,7 +73,7 @@
   },
   {
     "type": "keyword",
-    "value": "console-log"
+    "value": "process-stdout-write"
   },
   {
     "type": "colon",
@@ -69,11 +81,63 @@
   },
   {
     "type": "keyword",
-    "value": "text2"
+    "value": "text"
+  },
+  {
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
+    "type": "close-curly-brace",
+    "value": "}"
+  },
+  {
+    "type": "function",
+    "value": "println"
+  },
+  {
+    "type": "open-square-brace",
+    "value": "["
   },
   {
     "type": "keyword",
     "value": "text"
+  },
+  {
+    "type": "close-square-brace",
+    "value": "]"
+  },
+  {
+    "type": "open-curly-brace",
+    "value": "{"
+  },
+  {
+    "type": "keyword",
+    "value": "process-stdout-write"
+  },
+  {
+    "type": "colon",
+    "value": ":"
+  },
+  {
+    "type": "keyword",
+    "value": "text"
+  },
+  {
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
+    "type": "keyword",
+    "value": "process-stdout-write"
+  },
+  {
+    "type": "colon",
+    "value": ":"
+  },
+  {
+    "type": "string",
+    "value": "\\n"
   },
   {
     "type": "semicolon",

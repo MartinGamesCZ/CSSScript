@@ -5,16 +5,20 @@
     "args": [],
     "children": [
       {
+        "type": "variable",
+        "name": "text",
+        "value": {
+          "type": "string",
+          "value": "Hello, World!"
+        }
+      },
+      {
         "type": "instruction",
-        "name": "print",
+        "name": "println",
         "args": [
           {
-            "type": "string",
-            "value": "Hello"
-          },
-          {
-            "type": "string",
-            "value": "World"
+            "type": "keyword",
+            "value": "text"
           }
         ]
       }
@@ -34,15 +38,42 @@
     "children": [
       {
         "type": "instruction",
-        "name": "console-log",
+        "name": "process-stdout-write",
         "args": [
           {
             "type": "keyword",
-            "value": "text2"
-          },
+            "value": "text"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "println",
+    "args": [
+      {
+        "name": "text"
+      }
+    ],
+    "children": [
+      {
+        "type": "instruction",
+        "name": "process-stdout-write",
+        "args": [
           {
             "type": "keyword",
             "value": "text"
+          }
+        ]
+      },
+      {
+        "type": "instruction",
+        "name": "process-stdout-write",
+        "args": [
+          {
+            "type": "string",
+            "value": "\\n"
           }
         ]
       }

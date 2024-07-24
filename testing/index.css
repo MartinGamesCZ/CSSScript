@@ -1,7 +1,13 @@
 .main {
-    print: "Hello" "World";
+    $text: "Hello, World!";
+    println: text;
 }
 
 .print[text, text2] {
-    console-log: text2 text;
+    process-stdout-write: text;
+}
+
+.println[text] {
+    process-stdout-write: text;
+    process-stdout-write: "\n";
 }

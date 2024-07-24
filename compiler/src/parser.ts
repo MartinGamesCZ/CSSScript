@@ -24,6 +24,19 @@ export default function parser(
 
         break;
 
+      case "variable":
+        const var_name = lexer_out[i].value;
+        const var_value = lexer_out[i + 2];
+
+        children.push({
+          type: "variable",
+          name: var_name,
+          value: var_value,
+        });
+
+        i += 3;
+        break;
+
       case "keyword":
         const args = [];
         let name = "";

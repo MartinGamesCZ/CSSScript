@@ -11,6 +11,10 @@ export default function generate_ir(parsed: any) {
         );
         break;
 
+      case "variable":
+        out += variable(parsed[i].name, parsed[i].value);
+        break;
+
       case "instruction":
         out += instruction(parsed[i].name, parsed[i].args);
         break;
@@ -44,4 +48,8 @@ function instruction(name: string, args: any[]) {
       else return arg.value;
     })
     .join(", ")});`;
+}
+
+function variable(name: string, value: any) {
+  return `let ${name} = ${value.type == "string" ? `"${value.value}"` : value.value};`;
 }

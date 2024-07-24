@@ -1,7 +1,9 @@
 main();
 
 function main() {
-  print("Hello", "World");
+  let text = "Hello, World!";println(text);
 }function print(text, text2) {
-  console.log(text2, text);
+  process.stdout.write(text);
+}function println(text) {
+  process.stdout.write(text);process.stdout.write("\n");
 }
