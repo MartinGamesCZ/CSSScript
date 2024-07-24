@@ -33,7 +33,7 @@ CSSScript is a toolkit for compiling and running CSS code as a programming langu
 - [x] Variables
 - [x] Executing instructions and functions
 - [x] Getting results from functions
-- [ ] Returning values from functions
+- [x] Returning values from functions
 - [ ] More built-in functions
 - [ ] Loops
 - [x] Conditions
@@ -130,6 +130,19 @@ You can use if statements to execute code conditionally.
 @if [condition] {
     /* Your code here */
 }
+```
+
+### Return statements
+You can use return statements to return values from functions.
+
+```css
+@return "Hello, world!";
+```
+
+Or to return variables:
+
+```css
+@return var(--my_variable);
 ```
 
 ## Built-in functions
