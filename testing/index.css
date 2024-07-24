@@ -1,8 +1,5 @@
-.main {
-    request-json: "https://jsonplaceholder.typicode.com/todos/1";
-    println: var(--result);
-}
+@import "./utils.css";
 
-.println[text] {
-    console-log: var(--text);
+.main {
+    println: "Hello, World!";
 }

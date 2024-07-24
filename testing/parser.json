@@ -1,16 +1,30 @@
 [
   {
+    "type": "import",
+    "value": "./utils.css"
+  },
+  {
     "type": "function",
     "name": "main",
     "args": [],
     "children": [
       {
         "type": "instruction",
-        "name": "request-json",
+        "name": "input-read",
         "args": [
           {
             "type": "string",
-            "value": "https://jsonplaceholder.typicode.com/todos/1"
+            "value": "Gender (M/F):"
+          }
+        ]
+      },
+      {
+        "type": "instruction",
+        "name": "get_greeting",
+        "args": [
+          {
+            "type": "variable-use",
+            "value": "result"
           }
         ]
       },
@@ -28,20 +42,83 @@
   },
   {
     "type": "function",
-    "name": "println",
+    "name": "get_greeting",
     "args": [
       {
-        "name": "text"
+        "name": "gender"
       }
     ],
     "children": [
       {
-        "type": "instruction",
-        "name": "console-log",
-        "args": [
+        "type": "if",
+        "condition": [
           {
             "type": "variable-use",
-            "value": "text"
+            "value": "gender"
+          },
+          {
+            "type": "equals",
+            "value": "="
+          },
+          {
+            "type": "equals",
+            "value": "="
+          },
+          {
+            "type": "string",
+            "value": "M"
+          }
+        ],
+        "body": [
+          {
+            "type": "return",
+            "value": [
+              {
+                "type": "string",
+                "value": "Hello, Sir!"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "if",
+        "condition": [
+          {
+            "type": "variable-use",
+            "value": "gender"
+          },
+          {
+            "type": "equals",
+            "value": "="
+          },
+          {
+            "type": "equals",
+            "value": "="
+          },
+          {
+            "type": "string",
+            "value": "F"
+          }
+        ],
+        "body": [
+          {
+            "type": "return",
+            "value": [
+              {
+                "type": "string",
+                "value": "Hello, Madam!"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "return",
+        "value": [
+          {
+            "type": "string",
+            "value": "Hello, there!"
           }
         ]
       }

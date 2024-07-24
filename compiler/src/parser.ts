@@ -101,6 +101,15 @@ export default function parser(
             type: "return",
             value: parseExpression(expression),
           });
+        } else if (logic_keyword == "import") {
+          const path = lexer_out[i + 1].value;
+
+          children.push({
+            type: "import",
+            value: path,
+          });
+
+          i += 2;
         }
 
         break;

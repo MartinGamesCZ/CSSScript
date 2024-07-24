@@ -1,3 +1,6 @@
+import compile from "./compiler";
+import path from "path";
+
 export default function generate_ir(parsed: any) {
   let out = "";
 
@@ -28,6 +31,10 @@ export default function generate_ir(parsed: any) {
 
       case "if":
         out += if_statement(parsed[i].condition, generate_ir(parsed[i].body));
+        break;
+
+      case "import":
+        out += compile(path.join(process.cwd(), parsed[i].value));
         break;
 
       case "return":

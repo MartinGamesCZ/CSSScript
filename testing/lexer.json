@@ -1,5 +1,17 @@
 [
   {
+    "type": "logic",
+    "value": "import"
+  },
+  {
+    "type": "string",
+    "value": "./utils.css"
+  },
+  {
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
     "type": "function",
     "value": "main"
   },
@@ -9,7 +21,7 @@
   },
   {
     "type": "keyword",
-    "value": "request-json"
+    "value": "input-read"
   },
   {
     "type": "colon",
@@ -17,7 +29,35 @@
   },
   {
     "type": "string",
-    "value": "https://jsonplaceholder.typicode.com/todos/1"
+    "value": "Gender (M/F):"
+  },
+  {
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
+    "type": "keyword",
+    "value": "get_greeting"
+  },
+  {
+    "type": "colon",
+    "value": ":"
+  },
+  {
+    "type": "keyword",
+    "value": "var"
+  },
+  {
+    "type": "open-parenthesis",
+    "value": "("
+  },
+  {
+    "type": "variable-use",
+    "value": "result"
+  },
+  {
+    "type": "close-parenthesis",
+    "value": ")"
   },
   {
     "type": "semicolon",
@@ -57,7 +97,7 @@
   },
   {
     "type": "function",
-    "value": "println"
+    "value": "get_greeting"
   },
   {
     "type": "open-square-brace",
@@ -65,7 +105,7 @@
   },
   {
     "type": "keyword",
-    "value": "text"
+    "value": "gender"
   },
   {
     "type": "close-square-brace",
@@ -76,12 +116,12 @@
     "value": "{"
   },
   {
-    "type": "keyword",
-    "value": "console-log"
+    "type": "logic",
+    "value": "if"
   },
   {
-    "type": "colon",
-    "value": ":"
+    "type": "open-square-brace",
+    "value": "["
   },
   {
     "type": "keyword",
@@ -93,11 +133,115 @@
   },
   {
     "type": "variable-use",
-    "value": "text"
+    "value": "gender"
   },
   {
     "type": "close-parenthesis",
     "value": ")"
+  },
+  {
+    "type": "equals",
+    "value": "="
+  },
+  {
+    "type": "equals",
+    "value": "="
+  },
+  {
+    "type": "string",
+    "value": "M"
+  },
+  {
+    "type": "close-square-brace",
+    "value": "]"
+  },
+  {
+    "type": "open-curly-brace",
+    "value": "{"
+  },
+  {
+    "type": "logic",
+    "value": "return"
+  },
+  {
+    "type": "string",
+    "value": "Hello, Sir!"
+  },
+  {
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
+    "type": "close-curly-brace",
+    "value": "}"
+  },
+  {
+    "type": "logic",
+    "value": "if"
+  },
+  {
+    "type": "open-square-brace",
+    "value": "["
+  },
+  {
+    "type": "keyword",
+    "value": "var"
+  },
+  {
+    "type": "open-parenthesis",
+    "value": "("
+  },
+  {
+    "type": "variable-use",
+    "value": "gender"
+  },
+  {
+    "type": "close-parenthesis",
+    "value": ")"
+  },
+  {
+    "type": "equals",
+    "value": "="
+  },
+  {
+    "type": "equals",
+    "value": "="
+  },
+  {
+    "type": "string",
+    "value": "F"
+  },
+  {
+    "type": "close-square-brace",
+    "value": "]"
+  },
+  {
+    "type": "open-curly-brace",
+    "value": "{"
+  },
+  {
+    "type": "logic",
+    "value": "return"
+  },
+  {
+    "type": "string",
+    "value": "Hello, Madam!"
+  },
+  {
+    "type": "semicolon",
+    "value": ";"
+  },
+  {
+    "type": "close-curly-brace",
+    "value": "}"
+  },
+  {
+    "type": "logic",
+    "value": "return"
+  },
+  {
+    "type": "string",
+    "value": "Hello, there!"
   },
   {
     "type": "semicolon",
