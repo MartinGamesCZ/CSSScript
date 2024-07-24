@@ -80,12 +80,26 @@ export default function parser(
             }
           }
 
-          console.log(condition);
-
           children.push({
             type: "if",
             condition: parseExpression(condition),
             body: parser(body),
+          });
+        } else if (logic_keyword == "return") {
+          const expression = [];
+
+          for (let j = i + 1; j < lexer_out.length; j++) {
+            if (lexer_out[j].type == "semicolon") {
+              i = j;
+              break;
+            }
+
+            expression.push(lexer_out[j]);
+          }
+
+          children.push({
+            type: "return",
+            value: parseExpression(expression),
           });
         }
 
@@ -105,8 +119,6 @@ export default function parser(
           else if (lexer_out[j].type == "colon") continue;
           else {
             const next = lexer_out[j + 1];
-
-            console.log(next, lexer_out[j], j);
 
             if (next.type == "open-parenthesis") {
               const invocation_name = lexer_out[j].value;

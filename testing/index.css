@@ -1,17 +1,6 @@
 .main {
-    input-read: "Is AI sentinent? ";
-
-    @if [var(--result) != "Yes"] {
-        println: "Okay, fine.";
-    }
-
-    @if [var(--result) == "Yes"] {
-        println: "Oh shit! We will die.";
-    }
-}
-
-.print[text] {
-    process-stdout-write: var(--text);
+    request-json: "https://jsonplaceholder.typicode.com/todos/1";
+    println: var(--result);
 }
 
 .println[text] {

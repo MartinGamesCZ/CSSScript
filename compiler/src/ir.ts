@@ -30,6 +30,12 @@ export default function generate_ir(parsed: any) {
         out += if_statement(parsed[i].condition, generate_ir(parsed[i].body));
         break;
 
+      case "return":
+        const val = parsed[i].value[0];
+        out += variable("result", val);
+        out += "return;\n";
+        break;
+
       case "instruction":
         out += instruction(parsed[i].name, parsed[i].args);
         break;

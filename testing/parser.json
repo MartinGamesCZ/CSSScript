@@ -6,98 +6,21 @@
     "children": [
       {
         "type": "instruction",
-        "name": "input-read",
+        "name": "request-json",
         "args": [
           {
             "type": "string",
-            "value": "Is AI sentinent? "
+            "value": "https://jsonplaceholder.typicode.com/todos/1"
           }
         ]
       },
-      {
-        "type": "if",
-        "condition": [
-          {
-            "type": "variable-use",
-            "value": "result"
-          },
-          {
-            "type": "keyword",
-            "value": "!"
-          },
-          {
-            "type": "equals",
-            "value": "="
-          },
-          {
-            "type": "string",
-            "value": "Yes"
-          }
-        ],
-        "body": [
-          {
-            "type": "instruction",
-            "name": "println",
-            "args": [
-              {
-                "type": "string",
-                "value": "Okay, fine."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "if",
-        "condition": [
-          {
-            "type": "variable-use",
-            "value": "result"
-          },
-          {
-            "type": "equals",
-            "value": "="
-          },
-          {
-            "type": "equals",
-            "value": "="
-          },
-          {
-            "type": "string",
-            "value": "Yes"
-          }
-        ],
-        "body": [
-          {
-            "type": "instruction",
-            "name": "println",
-            "args": [
-              {
-                "type": "string",
-                "value": "Oh shit! We will die."
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "name": "print",
-    "args": [
-      {
-        "name": "text"
-      }
-    ],
-    "children": [
       {
         "type": "instruction",
-        "name": "process-stdout-write",
+        "name": "println",
         "args": [
           {
             "type": "variable-use",
-            "value": "text"
+            "value": "result"
           }
         ]
       }

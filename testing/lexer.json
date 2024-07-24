@@ -9,7 +9,7 @@
   },
   {
     "type": "keyword",
-    "value": "input-read"
+    "value": "request-json"
   },
   {
     "type": "colon",
@@ -17,19 +17,19 @@
   },
   {
     "type": "string",
-    "value": "Is AI sentinent? "
+    "value": "https://jsonplaceholder.typicode.com/todos/1"
   },
   {
     "type": "semicolon",
     "value": ";"
   },
   {
-    "type": "logic",
-    "value": "if"
+    "type": "keyword",
+    "value": "println"
   },
   {
-    "type": "open-square-brace",
-    "value": "["
+    "type": "colon",
+    "value": ":"
   },
   {
     "type": "keyword",
@@ -42,158 +42,6 @@
   {
     "type": "variable-use",
     "value": "result"
-  },
-  {
-    "type": "close-parenthesis",
-    "value": ")"
-  },
-  {
-    "type": "keyword",
-    "value": "!"
-  },
-  {
-    "type": "equals",
-    "value": "="
-  },
-  {
-    "type": "string",
-    "value": "Yes"
-  },
-  {
-    "type": "close-square-brace",
-    "value": "]"
-  },
-  {
-    "type": "open-curly-brace",
-    "value": "{"
-  },
-  {
-    "type": "keyword",
-    "value": "println"
-  },
-  {
-    "type": "colon",
-    "value": ":"
-  },
-  {
-    "type": "string",
-    "value": "Okay, fine."
-  },
-  {
-    "type": "semicolon",
-    "value": ";"
-  },
-  {
-    "type": "close-curly-brace",
-    "value": "}"
-  },
-  {
-    "type": "logic",
-    "value": "if"
-  },
-  {
-    "type": "open-square-brace",
-    "value": "["
-  },
-  {
-    "type": "keyword",
-    "value": "var"
-  },
-  {
-    "type": "open-parenthesis",
-    "value": "("
-  },
-  {
-    "type": "variable-use",
-    "value": "result"
-  },
-  {
-    "type": "close-parenthesis",
-    "value": ")"
-  },
-  {
-    "type": "equals",
-    "value": "="
-  },
-  {
-    "type": "equals",
-    "value": "="
-  },
-  {
-    "type": "string",
-    "value": "Yes"
-  },
-  {
-    "type": "close-square-brace",
-    "value": "]"
-  },
-  {
-    "type": "open-curly-brace",
-    "value": "{"
-  },
-  {
-    "type": "keyword",
-    "value": "println"
-  },
-  {
-    "type": "colon",
-    "value": ":"
-  },
-  {
-    "type": "string",
-    "value": "Oh shit! We will die."
-  },
-  {
-    "type": "semicolon",
-    "value": ";"
-  },
-  {
-    "type": "close-curly-brace",
-    "value": "}"
-  },
-  {
-    "type": "close-curly-brace",
-    "value": "}"
-  },
-  {
-    "type": "function",
-    "value": "print"
-  },
-  {
-    "type": "open-square-brace",
-    "value": "["
-  },
-  {
-    "type": "keyword",
-    "value": "text"
-  },
-  {
-    "type": "close-square-brace",
-    "value": "]"
-  },
-  {
-    "type": "open-curly-brace",
-    "value": "{"
-  },
-  {
-    "type": "keyword",
-    "value": "process-stdout-write"
-  },
-  {
-    "type": "colon",
-    "value": ":"
-  },
-  {
-    "type": "keyword",
-    "value": "var"
-  },
-  {
-    "type": "open-parenthesis",
-    "value": "("
-  },
-  {
-    "type": "variable-use",
-    "value": "text"
   },
   {
     "type": "close-parenthesis",
