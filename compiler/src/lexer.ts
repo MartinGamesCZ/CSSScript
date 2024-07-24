@@ -21,7 +21,9 @@ export default function lexer(script: string) {
             tokens[j] === "]" ||
             tokens[j] === "[" ||
             tokens[j] === "=" ||
-            tokens[j] === ","
+            tokens[j] === "," ||
+            tokens[j] === "(" ||
+            tokens[j] === ")"
           ) {
             i = j - 1;
             break;
@@ -49,7 +51,9 @@ export default function lexer(script: string) {
             tokens[j] === "]" ||
             tokens[j] === "[" ||
             tokens[j] === "=" ||
-            tokens[j] === ","
+            tokens[j] === "," ||
+            tokens[j] === "(" ||
+            tokens[j] === ")"
           ) {
             i = j - 1;
             break;
@@ -93,6 +97,58 @@ export default function lexer(script: string) {
           type: "close-square-brace",
           value: tokens[i],
         });
+        break;
+
+      case "(":
+        result.push({
+          type: "open-parenthesis",
+          value: tokens[i],
+        });
+        break;
+
+      case ")":
+        result.push({
+          type: "close-parenthesis",
+          value: tokens[i],
+        });
+        break;
+
+      case "-":
+        const next = tokens[i + 1];
+
+        if (next == "-") {
+          for (let j = i + 2; j < tokens.length; j++) {
+            if (
+              tokens[j] === " " ||
+              tokens[j] === "{" ||
+              tokens[j] === ";" ||
+              tokens[j] === ":" ||
+              tokens[j] === "\n" ||
+              tokens[j] === "\r" ||
+              tokens[j] === "\t" ||
+              tokens[j] === "}" ||
+              tokens[j] === "]" ||
+              tokens[j] === "[" ||
+              tokens[j] === "=" ||
+              tokens[j] === "," ||
+              tokens[j] === "(" ||
+              tokens[j] === ")"
+            ) {
+              i = j - 1;
+              break;
+            }
+
+            buf += tokens[j];
+          }
+
+          result.push({
+            type: "variable-use",
+            value: buf,
+          });
+
+          buf = "";
+        }
+
         break;
 
       case ";":
@@ -163,7 +219,9 @@ export default function lexer(script: string) {
             tokens[j] === "]" ||
             tokens[j] === "[" ||
             tokens[j] === "=" ||
-            tokens[j] === ","
+            tokens[j] === "," ||
+            tokens[j] === "(" ||
+            tokens[j] === ")"
           ) {
             i = j - 1;
             break;

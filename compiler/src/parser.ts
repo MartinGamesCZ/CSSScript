@@ -49,7 +49,28 @@ export default function parser(
 
           if (j == i) name = lexer_out[j].value;
           else if (lexer_out[j].type == "colon") continue;
-          else args.push(lexer_out[j]);
+          else {
+            const next = lexer_out[j + 1];
+
+            if (next.type == "open-parenthesis") {
+              const invocation_name = lexer_out[j].value;
+
+              if (invocation_name == "var") {
+                const var_name = lexer_out[j + 2].value;
+
+                args.push({
+                  type: "variable-use",
+                  value: var_name,
+                });
+
+                j += 3;
+
+                continue;
+              }
+            }
+
+            args.push(lexer_out[j]);
+          }
         }
 
         children.push({
