@@ -1,11 +1,7 @@
 main();
 
 function main() {
-  hello_world();
-}function hello() {
-  console.log("Hello");
-}function world() {
-  console.log("World");
-}function hello_world() {
-  hello();world();
+  print("Hello", "World");
+}function print(text, text2) {
+  console.log(text2, text);
 }

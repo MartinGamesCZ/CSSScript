@@ -1,16 +1,7 @@
 .main {
-    hello_world:;
+    print: "Hello" "World";
 }
 
-.hello {
-    console-log: "Hello";
-}
-
-.world {
-    console-log: "World";
-}
-
-.hello_world {
-    hello:;
-    world:;
+.print[text, text2] {
+    console-log: text2 text;
 }

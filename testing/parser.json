@@ -2,53 +2,49 @@
   {
     "type": "function",
     "name": "main",
+    "args": [],
     "children": [
       {
         "type": "instruction",
-        "name": "hello_world",
-        "args": []
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "name": "hello",
-    "children": [
-      {
-        "type": "instruction",
-        "name": "console-log",
+        "name": "print",
         "args": [
-          "Hello"
+          {
+            "type": "string",
+            "value": "Hello"
+          },
+          {
+            "type": "string",
+            "value": "World"
+          }
         ]
       }
     ]
   },
   {
     "type": "function",
-    "name": "world",
-    "children": [
+    "name": "print",
+    "args": [
       {
-        "type": "instruction",
-        "name": "console-log",
-        "args": [
-          "World"
-        ]
-      }
-    ]
-  },
-  {
-    "type": "function",
-    "name": "hello_world",
-    "children": [
-      {
-        "type": "instruction",
-        "name": "hello",
-        "args": []
+        "name": "text"
       },
       {
+        "name": "text2"
+      }
+    ],
+    "children": [
+      {
         "type": "instruction",
-        "name": "world",
-        "args": []
+        "name": "console-log",
+        "args": [
+          {
+            "type": "keyword",
+            "value": "text2"
+          },
+          {
+            "type": "keyword",
+            "value": "text"
+          }
+        ]
       }
     ]
   }

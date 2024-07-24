@@ -4,7 +4,11 @@ export default function generate_ir(parsed: any) {
   for (let i = 0; i < parsed.length; i++) {
     switch (parsed[i].type) {
       case "function":
-        out += fn(parsed[i].name, generate_ir(parsed[i].children));
+        out += fn(
+          parsed[i].name,
+          parsed[i].args,
+          generate_ir(parsed[i].children),
+        );
         break;
 
       case "instruction":
@@ -16,8 +20,19 @@ export default function generate_ir(parsed: any) {
   return out;
 }
 
-function fn(name: string, content: string) {
-  return `function ${name}() {
+function fn(
+  name: string,
+  args: {
+    name: string;
+    default_value?: string;
+  }[],
+  content: string,
+) {
+  const proc_args = args
+    .map((a) => a.name + (a.default_value ? ` = "${a.default_value}"` : ""))
+    .join(", ");
+
+  return `function ${name}(${proc_args}) {
   ${content}
 }`;
 }
@@ -25,8 +40,8 @@ function fn(name: string, content: string) {
 function instruction(name: string, args: any[]) {
   return `${name.replaceAll("-", ".")}(${args
     .map((arg) => {
-      if (typeof arg === "string") return `"${arg}"`;
-      else return arg;
+      if (arg.type == "string") return `"${arg.value}"`;
+      else return arg.value;
     })
     .join(", ")});`;
 }

@@ -9,31 +9,7 @@
   },
   {
     "type": "keyword",
-    "value": "hello_world"
-  },
-  {
-    "type": "colon",
-    "value": ":"
-  },
-  {
-    "type": "semicolon",
-    "value": ";"
-  },
-  {
-    "type": "close-curly-brace",
-    "value": "}"
-  },
-  {
-    "type": "function",
-    "value": "hello"
-  },
-  {
-    "type": "open-curly-brace",
-    "value": "{"
-  },
-  {
-    "type": "keyword",
-    "value": "console-log"
+    "value": "print"
   },
   {
     "type": "colon",
@@ -42,30 +18,6 @@
   {
     "type": "string",
     "value": "Hello"
-  },
-  {
-    "type": "semicolon",
-    "value": ";"
-  },
-  {
-    "type": "close-curly-brace",
-    "value": "}"
-  },
-  {
-    "type": "function",
-    "value": "world"
-  },
-  {
-    "type": "open-curly-brace",
-    "value": "{"
-  },
-  {
-    "type": "keyword",
-    "value": "console-log"
-  },
-  {
-    "type": "colon",
-    "value": ":"
   },
   {
     "type": "string",
@@ -81,7 +33,27 @@
   },
   {
     "type": "function",
-    "value": "hello_world"
+    "value": "print"
+  },
+  {
+    "type": "open-square-brace",
+    "value": "["
+  },
+  {
+    "type": "keyword",
+    "value": "text"
+  },
+  {
+    "type": "comma",
+    "value": ","
+  },
+  {
+    "type": "keyword",
+    "value": "text2"
+  },
+  {
+    "type": "close-square-brace",
+    "value": "]"
   },
   {
     "type": "open-curly-brace",
@@ -89,23 +61,19 @@
   },
   {
     "type": "keyword",
-    "value": "hello"
+    "value": "console-log"
   },
   {
     "type": "colon",
     "value": ":"
-  },
-  {
-    "type": "semicolon",
-    "value": ";"
   },
   {
     "type": "keyword",
-    "value": "world"
+    "value": "text2"
   },
   {
-    "type": "colon",
-    "value": ":"
+    "type": "keyword",
+    "value": "text"
   },
   {
     "type": "semicolon",

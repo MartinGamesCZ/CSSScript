@@ -9,7 +9,20 @@ export default function lexer(script: string) {
     switch (tokens[i]) {
       case ".":
         for (let j = i + 1; j < tokens.length; j++) {
-          if (tokens[j] === " " || tokens[j] === "{") {
+          if (
+            tokens[j] === " " ||
+            tokens[j] === "{" ||
+            tokens[j] === ";" ||
+            tokens[j] === ":" ||
+            tokens[j] === "\n" ||
+            tokens[j] === "\r" ||
+            tokens[j] === "\t" ||
+            tokens[j] === "}" ||
+            tokens[j] === "]" ||
+            tokens[j] === "[" ||
+            tokens[j] === "=" ||
+            tokens[j] === ","
+          ) {
             i = j - 1;
             break;
           }
@@ -36,6 +49,20 @@ export default function lexer(script: string) {
         });
         break;
 
+      case "[":
+        result.push({
+          type: "open-square-brace",
+          value: tokens[i],
+        });
+        break;
+
+      case "]":
+        result.push({
+          type: "close-square-brace",
+          value: tokens[i],
+        });
+        break;
+
       case ";":
         result.push({
           type: "semicolon",
@@ -50,12 +77,26 @@ export default function lexer(script: string) {
         });
         break;
 
+      case ",":
+        result.push({
+          type: "comma",
+          value: tokens[i],
+        });
+        break;
+
       case " ":
         break;
 
       case "\n":
       case "\r":
       case "\t":
+        break;
+
+      case "=":
+        result.push({
+          type: "equals",
+          value: tokens[i],
+        });
         break;
 
       case '"':
@@ -78,7 +119,20 @@ export default function lexer(script: string) {
 
       default:
         for (let j = i; j < tokens.length; j++) {
-          if (tokens[j] === " " || tokens[j] === ":") {
+          if (
+            tokens[j] === " " ||
+            tokens[j] === "{" ||
+            tokens[j] === ";" ||
+            tokens[j] === ":" ||
+            tokens[j] === "\n" ||
+            tokens[j] === "\r" ||
+            tokens[j] === "\t" ||
+            tokens[j] === "}" ||
+            tokens[j] === "]" ||
+            tokens[j] === "[" ||
+            tokens[j] === "=" ||
+            tokens[j] === ","
+          ) {
             i = j - 1;
             break;
           }
