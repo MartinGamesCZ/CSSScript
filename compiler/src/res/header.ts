@@ -92,3 +92,4 @@ async function call_function(name, ...args) {
 define_function("print", console.log);
 define_function("prompt", input.read);
 define_function("fetch", request);
+define_function("json", JSON);
