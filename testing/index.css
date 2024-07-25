@@ -1,5 +1,15 @@
-@import "./utils.css";
+@import "./webserver.css";
 
 .main {
-    println: "Hello, World!";
+    create_webserver: 8080 var(--handler);
+    $app: var(--result);
+
+    print: "Server running at port 8080";
+}
+
+.handler[req,
+res] {
+    fetch-json: "https://"
+        res-write: "Hello World!";
+    res-end: ;
 }

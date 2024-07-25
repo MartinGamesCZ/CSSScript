@@ -1,3 +1,4 @@
+import { cpSync } from "fs";
 import compile from "./compiler";
 import path from "path";
 
@@ -34,13 +35,28 @@ export default function generate_ir(parsed: any) {
         break;
 
       case "import":
-        out += compile(path.join(process.cwd(), parsed[i].value));
+        if (parsed[i].value.trim().endsWith(".js")) {
+          cpSync(
+            parsed[i].value,
+            path.join(
+              process.cwd(),
+              "build/bindings/" + parsed[i].value.split("/").toReversed()[0],
+            ),
+          );
+          out += `await import_binding("${parsed[i].value.split("/").toReversed()[0]}");\n`;
+        } else if (parsed[i].value.startsWith("."))
+          out += compile(path.join(process.cwd(), parsed[i].value));
+        else out += `await import_module("${parsed[i].value}");\n`;
         break;
 
       case "return":
         const val = parsed[i].value[0];
         out += variable("result", val);
         out += "return;\n";
+        break;
+
+      case "bind":
+        out += `await bind_function("${parsed[i].value.split("/")[0]}");`;
         break;
 
       case "instruction":
@@ -64,7 +80,7 @@ function fn(
     .map((a) => a.name + (a.default_value ? ` = "${a.default_value}"` : ""))
     .join(", ");
 
-  return `async function ${name}(${proc_args}) {
+  return `define_function("${name}", async (${proc_args}) => {
   ${args
     .map((a) => {
       return variable(
@@ -82,11 +98,11 @@ function fn(
     })
     .join("\n")}
   ${content}
-}\n`;
+  });\n`;
 }
 
 function instruction(name: string, args: any[]) {
-  return `await ${name.replaceAll("-", ".")}(${args
+  return `await call_function("${name.replaceAll("-", ".")}", ${args
     .map((arg) => {
       if (arg.type == "string") return `"${arg.value}"`;
       if (arg.type == "variable-use") return variable_use(arg.value);

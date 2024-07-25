@@ -1,0 +1,1 @@
+call_function("main");

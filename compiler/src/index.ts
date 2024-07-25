@@ -1,8 +1,10 @@
-import { readFileSync, rmSync, writeFileSync } from "fs";
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from "fs";
 import * as path from "path";
 import lexer from "./lexer";
 import parser from "./parser";
 import generate_ir from "./ir";
+import compile from "./compiler";
+import { $ } from "bun";
 
 const rootFolder = process.cwd();
 const indexFile = path.join(rootFolder, "index.css");
@@ -10,31 +12,38 @@ const indexFile = path.join(rootFolder, "index.css");
 const start = performance.now();
 console.log("Compiling " + indexFile + "...");
 
-const lexer_out = lexer(readFileSync(indexFile, "utf8"));
+rmSync("build", { recursive: true, force: true });
+mkdirSync("build");
+mkdirSync("build/bindings");
 
-writeFileSync("lexer.json", JSON.stringify(lexer_out, null, 2));
+const deps = readFileSync(
+  path.join(rootFolder, "requirements.txt"),
+  "utf-8",
+).split("\n");
 
-const parser_out = parser(lexer_out);
+await $`cd build && bun add ${deps.join(" ")}`;
 
-writeFileSync("parser.json", JSON.stringify(parser_out, null, 2));
-
-const ir = generate_ir(parser_out);
-
-writeFileSync("ir.js", ir);
+const ir = compile(indexFile);
 
 const out =
-  readFileSync(path.join(__dirname, "res/header.ts"), "utf-8") + "\n" + ir;
+  readFileSync(path.join(__dirname, "res/header.ts"), "utf-8") +
+  "\n" +
+  ir +
+  "\n" +
+  readFileSync(path.join(__dirname, "res/end.ts"), "utf-8");
 
-writeFileSync("compiled.js", out);
+writeFileSync("build/compiled.js", out);
 
 const compiled = await Bun.build({
-  entrypoints: ["compiled.js"],
+  entrypoints: ["build/compiled.js"],
   minify: true,
 });
 
+await $`bun build --minify --compile --outfile compiled build/compiled.js`;
+
 const compiled_output = await compiled.outputs[0].text();
 
-writeFileSync("compiled.min.js", compiled_output);
+writeFileSync("build/compiled.min.js", compiled_output);
 
 const end = performance.now();
 console.log("Compiled in " + Math.floor(end - start) + "ms");

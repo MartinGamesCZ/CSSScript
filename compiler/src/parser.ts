@@ -110,6 +110,15 @@ export default function parser(
           });
 
           i += 2;
+        } else if (logic_keyword == "bind") {
+          const name = lexer_out[i + 1].value;
+
+          children.push({
+            type: "bind",
+            value: name,
+          });
+
+          i += 2;
         }
 
         break;

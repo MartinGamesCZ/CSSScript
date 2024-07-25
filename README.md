@@ -122,7 +122,7 @@ You cannot currently return values from functions, but you can read results of t
 
 For example:
 ```css
-request-json: "https://jsonplaceholder.typicode.com/todos/1";
+fetch-json: "https://jsonplaceholder.typicode.com/todos/1";
 print: var(--result);
 ```
 
@@ -149,6 +149,6 @@ Or to return variables:
 ```
 
 ## Built-in functions
-- `console-log`: Prints to the console | Args: `data: any`
-- `request-json`: Sends HTTP request and returns JSON response | Args: `url: string`
-- `input-read`: Reads input from the console | Args: `message: string`
+- `print`: Prints to the console | Args: `data: any`
+- `fetch-json`: Sends HTTP request and returns JSON response | Args: `url: string`
+- `prompt`: Reads input from the console | Args: `message: string`
